@@ -2,6 +2,12 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-}
+  webpack(config) {
+    config.resolve.alias = {
+      "~": path.resolve(__dirname, "./src/"),
+    };
+    return config;
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
